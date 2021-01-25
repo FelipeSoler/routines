@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title %></title>
+    <%- include ('partials/head.html')  %>
+</head>
+<body>
+    <%- include ('partials/navigation.html')  %>
+    <div class="container sm p-4"">
+        <div class="col sm-6">
+            <div class="card text-center border border-dark">
+                <div class="card-title bg-dark text-white fs-5">Nuevo ejercicio</div>
+                <div class="class-body ps-4 pe-4 pb-3">
+                    <form action="/agregar" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label"><strong>Nombre de ejercicio</strong></label>
+                            <input type="text" name="nombreEjercicio" class="form-control" placeholder="Nombre del ejercicio">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label"><strong>Grupo muscular</strong></label>
+                            <input class="form-control" name="grupoMuscular" list="datalistOptions" placeholder="Seleccione">
+                            <datalist id="datalistOptions">
+                                <option value="Biceps"></option>
+                                <option value="Triceps"></option>
+                                <option value="Pecho"></option>
+                                <option value="Espalda"></option>
+                                <option value="Piernas"></option>
+                                <option value="Abdomen"></option>
+                                <option value="Hombro"></option>
+                                <option value="Cardiovascular"></option> 
+                            </datalist>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label"><strong>Equipamiento</strong></label>
+                            <input class="form-control" name="equipamiento" list="datalistOptions1" placeholder="Seleccione">
+                            <datalist id="datalistOptions1">
+                                <option value="Ninguno"></option>
+                                <option value="Bandas elásticas"></option>
+                                <option value="Mancuernas"></option>
+                            </datalist>
+                        </div>
+                        <button type="submit" value="submit" class="btn btn-primary mt-2" style="width: 100%;">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
